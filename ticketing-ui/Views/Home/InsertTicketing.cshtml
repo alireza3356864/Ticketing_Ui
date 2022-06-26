@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    <section class="Ticketing">
+        <section class="Ticketig-container">
+            <div _ngcontent-qpt-c23="" class="col-sm-12">
+                <div _ngcontent-qpt-c23="" class="content-header">
+                    <div class="fs-5">
+                        <i class="fa fa-address-card"></i>
+                        نظرات و پیشنهادات من
+                        <span _ngcontent-qpt-c23="" class="float-right">
+                    </div>
+                    <i _ngcontent-qpt-c23="" class="ft-chevron-left c-gray m-r-3 m-l-3 ripple cursor-pointer" placement="right"></i><i _ngcontent-qpt-c23="" class="ft-home c-gray m-r-3 m-l-3 ripple cursor-pointer" placement="right"></i></span>
+                </div><p _ngcontent-qpt-c23="" class="content-sub-header mt-3">در این صفحه میتوانید لیست پیشنهادات و نظرات خود را مشاهده کنید.</p><hr _ngcontent-qpt-c23="" class="m-t-0 m-b-0">
+            </div>
+
+            <form method="post" class="row Ticketing_form mt-5 mx-3">
+                <section class="row">
+                    <div class="mb-3 col-12 col-md-6 col-lg-6 col-xl-4">
+                        <label for="input-title" class="form-label">عنوان تیکت:</label>
+                        <input type="text" class="form-control" id="input-title" placeholder="نظر خود را وارد کنید">
+                    </div>
+
+                    <div class="mb-3 col-12 col-md-6 col-lg-6 col-xl-4">
+                        <label for="exampleFormControlInput1" class="form-label">موضوع تیکت:</label>
+                        <select id="ticket-topic" class="form-select" aria-label="Default select example">
+                            <option value="e6d1d44e-fe68-4952-a743-fb3c4e8ef9e6" selected>پشتیبانی</option>
+                            <option value="e6d1d44e-fe68-4952-a743-fb3c4e8ef9e6">پشتیبانی فنی</option>
+                            <option value="e6d1d44e-fe68-4952-a743-fb3c4e8ef9e6">خرابی سایت</option>
+                        </select>
+                    </div>
+                </section>
+
+
+                <section class="row">
+                    <div class="mb-3 col-12 col-md-6 col-lg-6 col-xl-4">
+                        <label for="exampleFormControlInput1" class="form-label">اولویت :</label>
+                        <select id="ticket-priority" class="form-select" aria-label="Default select example">
+                            <option value="0" selected>نامشخص</option>
+                            <option value="1">بحرانی</option>
+                            <option value="2">به شدت ضروری</option>
+                            <option value="3">ضروری</option>
+                            <option value="4">متوسط</option>
+                            <option value="5">پایین</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 col-12 col-md-6 col-lg-6 col-xl-4">
+                        <label for="exampleFormControlInput1" class="form-label">بخش مورد نظر:</label>
+                        <select id="ticket-sectiontype" class="form-select" aria-label="Default select example">
+                            <option value="0" selected>نامشخص</option>
+                            <option value="1">مصرف کننده</option>
+                            <option value="2">فروشگاه</option>
+                            <option value="3">انبار</option>
+                            <option value="4">تامین کننده</option>
+                            <option value="5">مدیریت</option>
+                        </select>
+                    </div>
+                </section>
+
+
+                <section class="row">
+                    <div class="mb-3 col-12 col-xl-8">
+                        <label for="ticket-body" class="form-label">توضیحات</label>
+                        <textarea style="height: 200px;" type="email" class="form-control" id="ticket-body" placeholder="توضیحات خود را وارد کنید"></textarea>
+                    </div>
+
+
+
+                </section>
+                <section class="row">
+                    <div class="mb-3 col-12">
+                        <button type="button" onclick="SendTicket()" style="width: 200px; color: aliceblue; font-size: 40px;" class="btn bg-custom-blue fs-6 mb-4">
+                            ثبت
+                        </button>
+
+                        <button type="reset" style="width: 200px; color: aliceblue; font-size: 40px; margin-bottom: 20px;" class="btn bg-danger fs-6 mb-4">
+                            پاک کردن اطلاعات
+                        </button>
+
+                    </div>
+                </section>
+            </form>
+
+        </section>
+    </section>
+ <script src="~/js/ticketing-ajax.js"></script>
