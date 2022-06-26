@@ -62,7 +62,8 @@ var ticketing = {
                 case 0: status = "نامشخص"
                     break;
 
-                case 1: status = "جدید"
+                case 1:
+                    { status = "جدید"}
                     break;
 
                 case 2: status = "پاسخ مشتری"
