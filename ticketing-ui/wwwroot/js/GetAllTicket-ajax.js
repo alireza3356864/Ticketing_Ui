@@ -50,7 +50,8 @@ var ticketing = {
     },
     search() {
         var searchedTerm = $("#input-search").val();
-        this.searchedData = this.data.filter(d => d.title.indexOf(searchedTerm) >= 0);
+        //this.searchedData = this.data.filter(d => toString(d.year).indexOf(searchedTerm) >= 0);
+        this.searchedData = this.data.filter(d => d.title.indexOf(searchedTerm) >= 0 || d.topic.title.indexOf(searchedTerm) >= 0);
 
         this.loadData();
     },
