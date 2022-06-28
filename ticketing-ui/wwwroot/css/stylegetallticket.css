@@ -60,7 +60,7 @@
         border-bottom: 4px solid #f8f9fd;
         border-left: 4px solid #eceffa;
         border-right: 4px solid #eceffa;
-        transition: background .5s ease;
+        transition: background .2s ease;
     }
 
     .table tbody tr:hover{

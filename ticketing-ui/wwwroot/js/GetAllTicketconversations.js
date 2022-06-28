@@ -46,50 +46,48 @@ var ticketing = {
     },
     search() {
         var searchedTerm = $("#input-search").val();
-        //this.searchedData = this.data.filter(d => toString(d.year).indexOf(searchedTerm) >= 0);
-        this.searchedData = this.data.filter(d => d.title.indexOf(searchedTerm) >= 0 || d.topic.title.indexOf(searchedTerm) >= 0);
+        this.searchedData = this.data.filter(d => d.Body.indexOf(searchedTerm) >= 0);
 
         this.loadData();
     },
     loadData: function () {
-        var className = ""
         var htmlValue = '';
 
 
         this.searchedData.forEach(element => {
-            switch (element.status) {
-                case 0:
-                    {
-                        status = "نامشخص"
-                        className = "waiting"
-                    }
-                    break;
+            //switch (element.status) {
+            //    case 0:
+            //        {
+            //            status = "نامشخص"
+            //            className = "waiting"
+            //        }
+            //        break;
 
-                case 1:
-                    {
-                        status = "جدید"
-                        className = "active"
-                    }
-                    break;
+            //    case 1:
+            //        {
+            //            status = "جدید"
+            //            className = "active"
+            //        }
+            //        break;
 
-                case 2:
-                    {
-                        status = "پاسخ مشتری"
-                        className = "waiting"
-                    }
+            //    case 2:
+            //        {
+            //            status = "پاسخ مشتری"
+            //            className = "waiting"
+            //        }
 
-                    break;
+            //        break;
 
-                case 2: status = "پاسخ کارشناس"
-                    break;
+            //    case 2: status = "پاسخ کارشناس"
+            //        break;
 
-                case 3: status = "بسته"
-                    break;
+            //    case 3: status = "بسته"
+            //        break;
 
 
 
-                default: "نامشخص";
-            }
+            //    default: "نامشخص";
+            //}
 
 
             htmlValue = `${htmlValue}
@@ -97,15 +95,15 @@ var ticketing = {
         
                 <td class="d-flex align-items-center">
                     <div class="pl-3 email">
-                        <span>${element.title}</span>
-                        <span>تغییرات:${element.modifiedPersian} </span>
+                        <span>${element.body}</span>
+                        <span></span>
                     </div>
                 </td>
-                <td>${element.topic.title}</td>
-                <td class="status border-bottom-0"><span id="status-span" class="${className}">${status}</span></td>
-                <td>${element.year}</td>
-                <td>${element.code}</td>
-                <td>${element.createdPersian}</td>
+                <td></td>
+                <td class="status border-bottom-0"><span id="status-span" class=""></span></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
 
 `
@@ -117,17 +115,16 @@ var ticketing = {
     getAll: function () {
         var that = this;
         $.ajax({
-            url: "https://localhost:44358/ticketing/GetAllTicket",
+            url: "https://localhost:44358/ticketing/GetAllTicketConversation",
             type: "POST",
             contentType: "application/json; charset=utf-8",
 
             success: function (response) {
-                console.log(response.ticket);
+                console.log(response.ticket.ticketConversations.sort(x => x.created));
 
 
                 var htmlValue = "";
-                var status = "";
-                that.data = response.ticket;
+                that.data = response.ticket.ticketConversations.sort(x => x.created);
                 that.searchedData = that.data;
                 that.loadData();
                 return htmlValue;

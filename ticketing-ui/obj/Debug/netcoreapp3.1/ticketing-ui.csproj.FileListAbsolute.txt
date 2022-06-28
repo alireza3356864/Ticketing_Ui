@@ -74,3 +74,4 @@ D:\Project\ticketing-ui\ticketing-ui\obj\Debug\netcoreapp3.1\Razor\Views\Home\In
 D:\Project\ticketing-ui\ticketing-ui\obj\Debug\netcoreapp3.1\Razor\Views\Home\GetAllTicket.cshtml.g.cs
 D:\Project\ticketing-ui\ticketing-ui\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TicketingPartial.cshtml.g.cs
 D:\Project\ticketing-ui\ticketing-ui\obj\Debug\netcoreapp3.1\Razor\Views\Home\TicketConversation.cshtml.g.cs
+D:\Project\ticketing-ui\ticketing-ui\obj\Debug\netcoreapp3.1\Razor\Views\Home\GetAllTicketconversation.cshtml.g.cs
