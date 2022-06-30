@@ -15,16 +15,12 @@
                         <i _ngcontent-qpt-c23="" class="ft-chevron-left c-gray m-r-3 m-l-3 ripple cursor-pointer" placement="right"></i><i _ngcontent-qpt-c23="" class="ft-home c-gray m-r-3 m-l-3 ripple cursor-pointer" placement="right"></i></span>
                     </div><p _ngcontent-qpt-c23="" class="content-sub-header mt-3">در این صفحه میتوانید لیست پیشنهادات و نظرات خود را مشاهده کنید.</p><hr _ngcontent-qpt-c23="" class="m-t-0 m-b-0">
                 </div>
-
-                <div class="row conversation-box">
-                             <tbody sgs-ticket-section >
-
-                              </tbody>
+                 <a href="#endwindow" id="possitionend" >end</a>
+                    <section sgs-ticket-section class="margin-botton"></section>
 
 
 
-
-             <div class="row justify-content-start">
+@*             <div class="row justify-content-start">
                 <section class="col-8 col-md-6 col-lg-4 card-text-ticketconversation-store">
                     <a href="#" class="text-decoration-none d-block mb-4 margin-botton">
                         <section class="card bg-primary text-white border-none">
@@ -126,15 +122,16 @@
                         </section>
                     </a>
                 </section>
-             </div>
+             </div>*@
                              
 
 
                               
-
+           
                  <!-- <div style="height: 90px;" class="col align-self-end">
                    .
                   </div> -->
+                  <p id="endwindow"></p>
                 <div class=" send-ticketconversation-parent">
                     <section class="sendIcon-Input-parent">
                         <input  type="text" class="form-control input-search" id="input-search" placeholder="پاسخ خود را بنویسید...">
@@ -143,11 +140,11 @@
                 </div>
      
 
-            </div>
     
             </section>
         </section>
-
- @*<script src="~/js/GetAllTicketConversations.js"></script>*@
- <script src="~/js/TicketConversation.js"></script>
+ @section scripts {
+  <script src="~/js/TicketConversation.js"></script>
+ <script src="~/js/GetAllTicketconversations.js"></script>>
+}
  

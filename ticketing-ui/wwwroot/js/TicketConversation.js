@@ -1,4 +1,15 @@
 
+//window.onload = function () {
+//   scrollWi
+//n();
+//};
+//function scrollWin() {
+//    window.scrollTo
+//, 1500);
+//}
+//function buttonClick() {
+//}
+
 var body = document.getElementById("input-search");
 function SendTicket() {
     try {
@@ -13,8 +24,8 @@ function SendTicket() {
                 data: JSON.stringify({
                     body: body.value,
                     status: 0,
-                    TicketId: "87c7b203-2eac-443f-8081-f537c533ab6b",
-                    ParentId:"81acab69-8c3e-468d-8fdd-cc46d95f917d"
+                    TicketId: "4E3FDD25-C51D-4B2B-AE36-966B7A91B5A1",
+                    ParentId: ""
                 }),
 
                 success: function (response) {
@@ -29,9 +40,19 @@ function SendTicket() {
 
         }
 
-
+        body.value = "";
     } catch (error) {
         throw error;
     }
 
 }
+
+
+
+
+
+
+
+
+
+

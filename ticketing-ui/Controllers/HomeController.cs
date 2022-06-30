@@ -40,10 +40,7 @@ namespace ticketing_ui.Controllers
         {
             return View();
         }
-        public IActionResult GetAllTicketconversation()
-        {
-            return View();
-        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

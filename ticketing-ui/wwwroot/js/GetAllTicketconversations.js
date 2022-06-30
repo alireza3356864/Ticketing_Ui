@@ -1,110 +1,65 @@
-// var tickets = this.getAll();
-// $("[sgs-ticket-table] tbody").html(tickets);
-// GetAllTicket();
-// function GetAllTicket() {
-//     try {
-//         $.ajax({
-//             url: "https://localhost:44358/ticketing/GetAllTicket",
-//             type: "POST",
-//             contentType: "application/json; charset=utf-8",
-//             success: function (response) {
-//                // console.log(response.ticket);
-//                 var output=""
-//                 response.ticket.forEach(element => {
-//                     console.log(element.title)
-//                     output+="";
-//                 });
-//                 // You will get response from your PHP page (what you echo or print)
-//             },
-//             error: function (jqXHR, textStatus, errorThrown) {
-//                 console.log(textStatus, errorThrown);
-//             }
-//         });
-//         document.getElementById("get-ticketing-container").inn
-
-//const { values } = require("../lib/fontawesome/js/v4-shims");
-
-
-
-
-//     } catch (error) {
-//         throw error;
-//     }
-
-// }
-
 
 var ticketing = {
     data: null,
-    searchedData: null,
     init: function () {
         var that = this;
         that.getAll();
-        $('#input-search').on('input', function (e) {
-            that.search();
-        });
     },
-    search() {
-        var searchedTerm = $("#input-search").val();
-        this.searchedData = this.data.filter(d => d.Body.indexOf(searchedTerm) >= 0);
 
-        this.loadData();
-    },
     loadData: function () {
         var htmlValue = '';
+        var className = "";
+        var ColorBox = "";
+        var JustifyElement = "";
+
+        this.Data.forEach(element => {
+            switch (element.sectionType) {
+                case 5:
+                    {
+                        className = "justify-content-end"
+                        ColorBox = "bg-gray-costom"
+                        JustifyElement = "card-text-ticketconversation-admin"
+                    }
+                    break; 
+
+                case 1:
+                    {
+                        className = "justify-content-start"
+                        ColorBox = "bg-primary"
+                        JustifyElement ="card-text-ticketconversation-store"
+                    }
+                    break;
 
 
-        this.searchedData.forEach(element => {
-            //switch (element.status) {
-            //    case 0:
-            //        {
-            //            status = "نامشخص"
-            //            className = "waiting"
-            //        }
-            //        break;
-
-            //    case 1:
-            //        {
-            //            status = "جدید"
-            //            className = "active"
-            //        }
-            //        break;
-
-            //    case 2:
-            //        {
-            //            status = "پاسخ مشتری"
-            //            className = "waiting"
-            //        }
-
-            //        break;
-
-            //    case 2: status = "پاسخ کارشناس"
-            //        break;
-
-            //    case 3: status = "بسته"
-            //        break;
-
-
-
-            //    default: "نامشخص";
-            //}
+                default: {
+                    className = "justify-content-start"
+                    ColorBox = "bg-primary"
+                    JustifyElement = "card-text-ticketconversation-store"
+                }
+               
+            }
 
 
             htmlValue = `${htmlValue}
-                <tr class="alert" role="alert">
-        
-                <td class="d-flex align-items-center">
-                    <div class="pl-3 email">
-                        <span>${element.body}</span>
-                        <span></span>
-                    </div>
-                </td>
-                <td></td>
-                <td class="status border-bottom-0"><span id="status-span" class=""></span></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+             <div class="row ${className}">
+                <section class="col-8 col-md-6 col-lg-4 ${JustifyElement}">
+                    <a class="text-decoration-none d-block mb-4 margin-botton">
+                        <section class="card ${ColorBox} text-white border-none">
+                            <section class="card-body">
+                                <section class="d-flex justify-content-between">
+                                    <section class="info-box-body">
+                                        <p>${element.body}</p >
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="p-2 info-box-footer">
+                                <i class="fas fa-clock mx-2"></i>
+                               ${element.createdPersian}
+                            </section>
+                        </section>
+                    </a>
+                </section>
+             </div>
 
 `
         });
@@ -120,12 +75,12 @@ var ticketing = {
             contentType: "application/json; charset=utf-8",
 
             success: function (response) {
-                console.log(response.ticket.ticketConversations.sort(x => x.created));
+                console.log(response.ticket.ticketConversations);
 
 
                 var htmlValue = "";
-                that.data = response.ticket.ticketConversations.sort(x => x.created);
-                that.searchedData = that.data;
+                that.data = response.ticket.ticketConversations;
+                that.Data = that.data;
                 that.loadData();
                 return htmlValue;
             },

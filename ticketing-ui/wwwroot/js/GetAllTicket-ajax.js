@@ -38,21 +38,24 @@ var ticketing = {
     data: null,
     searchedData: null,
     init: function () {
+
         var that = this;
         that.getAll();
         $('#input-search').on('input', function (e) {
             that.search();
         });
+        
+
+
     },
     search() {
         var searchedTerm = $("#input-search").val();
         //this.searchedData = this.data.filter(d => toString(d.year).indexOf(searchedTerm) >= 0);
         this.searchedData = this.data.filter(d => d.title.indexOf(searchedTerm) >= 0 || d.topic.title.indexOf(searchedTerm) >= 0);
-
         this.loadData();
     },
     loadData: function () {
-        var className = ""
+        var className = '';
         var htmlValue = '';
 
 
@@ -86,14 +89,13 @@ var ticketing = {
                 case 3: status = "بسته"
                     break;
 
-
-
                 default: "نامشخص";
             }
 
 
             htmlValue = `${htmlValue}
-                <tr class="alert" role="alert">
+             
+                <tr class="alert showconversation" role="alert">
         
                 <td class="d-flex align-items-center">
                     <div class="pl-3 email">
@@ -106,12 +108,16 @@ var ticketing = {
                 <td>${element.year}</td>
                 <td>${element.code}</td>
                 <td>${element.createdPersian}</td>
+            
               </tr>
 
 `
         });
         $("[sgs-ticket-section]").html(htmlValue);
-
+        $('.showconversation').on('click', function (e) {
+                window.location.href = "https://localhost:44333/Home/TicketConversation" ;
+            
+        });
     },
 
     getAll: function () {
@@ -123,7 +129,6 @@ var ticketing = {
 
             success: function (response) {
                 console.log(response.ticket);
-
 
                 var htmlValue = "";
                 var status = "";

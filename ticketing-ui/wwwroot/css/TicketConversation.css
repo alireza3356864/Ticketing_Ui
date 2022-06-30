@@ -1,127 +1,125 @@
 
 /* searck box style */
-.input-search{
-  position: relative;
-  border-radius: 50px;
-  width: 100%;
-  height: 50px;
-  background-color: #e6ebf5!important;
-
+.input-search {
+    position: relative;
+    border-radius: 50px;
+    width: 100%;
+    height: 50px;
+    background-color: #e6ebf5 !important;
 }
+
 @media (min-width:767.98px) {
-  .sendIcon-Input-parent{
-    width: 50%!important;
-  } 
-}
-.send-icon{
-  position:absolute;
-  color: #0d6efd;
-  cursor: pointer;
-  left: 13px;
-  top: 18px;
-  
+    .sendIcon-Input-parent {
+        width: 50% !important;
+    }
+    .card-text-ticketconversation-admin::after {
+        left: -20px!important;
+    }
+    .card-text-ticketconversation-store::after {
+        right: 0px!important;
+    }
 }
 
-.search-container{
-  position: relative;
+.send-icon {
+    position: absolute;
+    color: #0d6efd;
+    cursor: pointer;
+    left: 13px;
+    top: 18px;
 }
+
+.search-container {
+    position: relative;
+}
+
 .card-text-ticketconversation-admin {
     position: relative;
     width: auto !important;
     min-width: 200px;
 }
-.card-text-ticketconversation-store{
-  position: relative;
-  width: auto!important;
-  min-width: 200px;
+
+
+.card-text-ticketconversation-store {
+    position: relative;
+    width: auto !important;
+    min-width: 200px;
 }
+
 .card-text-ticketconversation-admin::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-  font-size: 80px;
-  color: #404E67;
-  position:absolute;
-  bottom: 50px;
-  left: -22px;
-  transform: rotate(-90deg);
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    font-size: 80px;
+    color: #404E67;
+    position: absolute;
+    bottom: 50px;
+    left: -22px;
+    transform: rotate(-90deg);
 }
+
 .card-text-ticketconversation-store::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-  font-size: 80px;
-  color: #0d6efd;
-  position:absolute;
-  bottom: 50px;
-  right: 0px;
-  transform: rotate(90deg);
-  z-index: -10000;
-}
-@media (min-width:767.98px) {
-    .card-text-ticketconversation-admin::after {
-        left:-20px;
-    }
-    } 
-
-
-.send-ticketconversation-parent{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background-color: white;
-  border-top: 1px solid #ddd;
-  width: 100%;
-  height: 100px;
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    font-size: 80px;
+    color: #0d6efd;
+    position: absolute;
+    bottom: 50px;
+    right: -1px;
+    transform: rotate(90deg);
+    z-index: -10000;
 }
 
-.sendIcon-Input-parent{
-  position: relative;
-  width: 100%;
+.send-ticketconversation-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    height: 100px;
 }
+
+.sendIcon-Input-parent {
+    position: relative;
+    width: 100%;
+}
+
 @media (min-width: 1200px) {
-  .container-Conversation {
-    max-width: 2300px; }
- }
-.conversation-box{
-  margin-bottom: 100px;
+    .container-Conversation {
+        max-width: 2300px;
+    }
 }
-.bg-gray {
+
+.conversation-box {
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+.margin-botton {
+    margin-bottom: 50px !important;
+}
+
+.border-none {
+    border: none;
+}
+.bg-gray-costom {
     background-color: #404E67;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- .margin-botton{
-       margin-bottom: 50px!important; 
-}
-.border-none{
-  border: none;
 }

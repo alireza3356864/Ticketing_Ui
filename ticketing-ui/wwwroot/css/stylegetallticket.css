@@ -33,7 +33,7 @@
   background-position: center center; }
 
 .table-wrap {
-  overflow-x:auto; }
+  overflow-x:scroll; }
 
 .table {
   min-width: 1000px !important;
@@ -71,6 +71,7 @@
     .table tbody tr:last-child {
       border-bottom: 0; }
   .table tbody th, .table tbody td {
+      min-width: 168px;
     text-align: right;
     border: none;
     padding: 30px;
