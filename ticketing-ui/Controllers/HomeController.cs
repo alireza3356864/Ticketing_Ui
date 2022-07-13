@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ticketing_ui.Models;
 
+
 namespace ticketing_ui.Controllers
 {
     public class HomeController : Controller
@@ -36,11 +37,12 @@ namespace ticketing_ui.Controllers
         {
             return View();
         }
-        public IActionResult TicketConversation()
+
+        public IActionResult TicketConversation(string ticketid)
         {
+            ViewBag.TicketId = ticketid;
             return View();
         }
-
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

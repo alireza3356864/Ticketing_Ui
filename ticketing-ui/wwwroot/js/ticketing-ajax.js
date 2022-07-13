@@ -64,6 +64,8 @@ function SendTicket() {
 
                 success: function (response) {
                     console.log(response);
+                    title.value = "";
+                    body.value = "";
                     alert("تیکت با موفقیت ثبت شد");
                     // You will get response from your PHP page (what you echo or print)
                 },
